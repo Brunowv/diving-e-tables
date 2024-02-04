@@ -41,7 +41,7 @@ def calculate():
     try:
         t_immersion, t_descompression = buhlmann(depth, time, temperature, salinity, gas_mix, altitude)
     except ValueError as e:
-        return render_template("error.html", message=str(e)), 400
+        return render_template("error.html", message=str(e)), 400 # i have to do something here, but is getting late
     return render_template("result.html", t_immersion=t_immersion, t_descompression=t_descompression)
 if __name__ == "__main__":
     app.run(debug=True)
